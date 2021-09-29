@@ -2,7 +2,26 @@
 
 import cmath
 
+#   Vref
+#    |
+#    >
+#    < R1
+#    >
+#    |
+#    +------ Vo
+#    |
+#    >
+#    < R2
+#    >
+#    |
+#   Vgnd
+
+# Vo = ((Vref * R2) - (Vgnd * R1)) / (R1 + R2)
+# More common formula known is when Vgnd = 0
+# (Vo / Vref) = R2 / (R1 + R2)
+
 def main():
+    index = 0
     caps = [1e-12, 2.2e-12, 3.3e-12, 3.9e-12, 4.7e-12, 5.6e-12, 6.8e-12,\
             8.2e-12, 10e-12, 15e-12, 22e-12, 27e-12, 33e-12, 39e-12, 47e-12,\
             56e-12, 82e-12, 100e-12, 150e-12, 180e-12, 220e-12, 330e-12,\
@@ -19,13 +38,25 @@ def main():
                  56e3, 68e3, 82e3, 100e3, 120e3, 150e3, 180e3, 220e3, 270e3,\
                  330e3, 390e3, 470e3, 510e3, 560e3, 620e3, 680e3, 820e3, 1e6]
     
-    LHS1 = 680 / (680 + 2000)
+    Vref = 1
+    Vgnd = 0
+    Vo = 5
+    tolerance = 0.1 # % Tolerance for how close the ratio  of LHS comes to RHS
 
-    for R1 in resistors:
-        for R2 in resistors:
-            RHS1 = R1/(R1 + R2)
+    R1_MIN = 680
+    R2_MIN = 680
 
-            if abs((RHS1-LHS1)/LHS1) <= 0.1 and R1 >= 680 and R2 >= 680:
-                print("R1=", R1, "R2=", R2, "1: ", (RHS1-LHS1)/LHS1, "RHS1: ", RHS1)
+    LHS = 680 / (680 + 2000)
+
+    print("LHS: ", LHS)
+    for R2 in resistors:
+        for R1 in resistors:
+            RHS = ((Vref * R2) - (Vgnd * R1)) / (R1 + R2)
+
+            LHS_deviation = (RHS - LHS) / LHS
+
+            if abs(LHS_deviation) <= tolerance and R1 >= R1_MIN and R2 >= R2_MIN:
+                index += 1
+                print("#{0}\tR2= {1:n}\tR1= {2:n}\tDeviation(%): {3:.4f}\tRHS: {4:.4f}".format(index, R2, R1, LHS_deviation, RHS))
 
 main()

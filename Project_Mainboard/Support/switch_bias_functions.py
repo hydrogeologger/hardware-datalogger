@@ -8,6 +8,10 @@ class BetaValueError(Exception):
     """Raised when beta value is non-positive or not given for calculation"""
     pass
 
+class CurrentValueError(Exception):
+    """Raised when current value is not appropriate for given calculation"""
+    pass
+
 caps = [1e-12, 2.2e-12, 3.3e-12, 3.9e-12, 4.7e-12, 5.6e-12, 6.8e-12,\
         8.2e-12, 10e-12, 15e-12, 22e-12, 27e-12, 33e-12, 39e-12, 47e-12,\
         56e-12, 82e-12, 100e-12, 150e-12, 180e-12, 220e-12, 330e-12,\
@@ -111,7 +115,7 @@ def npn_rb_from_ib(Vbb, Vbe, Ib, beta=0, Re=0, Vee=0):
     return Rb
 
 
-def npn_active_bias_vce(desired_vce, Vcc, beta, Ib, Vce_sat, Re=0, Vee=0):
+def npn_active_bias_vce(desired_vce, Vcc, beta, Ib, Vce_sat, Re=0, Vee=0, Ic=0):
     """
     Raises
     ------
@@ -120,15 +124,17 @@ def npn_active_bias_vce(desired_vce, Vcc, beta, Ib, Vce_sat, Re=0, Vee=0):
     """
     # Assume NPN in Common-Emitter configuration
     # in active region
-    if Re > 0 and beta <= 0:
-        raise BetaValueError("Beta value is not included or is negative")
-
     if desired_vce > Vce_sat:
+        if beta <= 0:
+            raise BetaValueError("Beta value is non-positive")
+        Ic = beta * Ib
         Vce = desired_vce
     else:
+        # NPN in saturation region
+        if Ic <= 0:
+            raise CurrentValueError("Ic current is non-positive")
         Vce = Vce_sat
-    
-    Ic = beta * Ib
+                
     Ie = Ic + Ib
     Rc = (Vcc - Vce - (Ie * Re) - Vee) / Ic
     return Rc

@@ -77,9 +77,9 @@ def main():
 
     R1 = 3900
     Ib = npn_calculate_ib(Vbb=5, Vbe=Vbe_sat, Rb=Rb)
-    R1 = round(npn_active_bias_vce(desired_vce = Vce_sat, Vce_sat = Vce_sat, Vcc = 14.7, beta=beta, Ib = Ib))
+    R1 = round(npn_active_bias_vce(desired_vce = Vce_sat, Vce_sat = Vce_sat, Vcc = 14.7, beta=beta, Ib = Ib, Ic = 0.1e-3))
     print("R1 options: {0}".format(get_common_resistor_value(R1)))
-    R1 = get_common_resistor_value(R1)[1]
+    R1 = get_common_resistor_value(R1)[0]
 
     active_load = True # Load is passive (false): pure resistive or active (true): acts as current-stable non-linear resistor
     load_current = 2.5

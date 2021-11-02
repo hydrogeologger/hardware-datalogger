@@ -70,6 +70,12 @@ class fet(FetCharacteristics):
 # BJT Parameters, BC848B
 bc848b = Bjt(Vbe_sat=0.7,Vce_sat=0.09,beta=290)
 
+# NTR1P02/NVR1P02 P-Fet, SOT-23
+## Max Vgs -20V, Rds = 0.148 Ohm @-10V
+ntr1p02 = fet("NTR1P02")
+ntr1p02.set_vth((-1.1-2.3)/2)
+ntr1p02.set_k(Vgs1 = -2.5, Id1 = 0.125, Vgs2 = -3.5, Id2 = 1.75)
+
 # IRF9z34N and FQP30n06
 ## IRF9z34N Max Vgs +-20
 ## FQP30n06 Max Vgs +-25

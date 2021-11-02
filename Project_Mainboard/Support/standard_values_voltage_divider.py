@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+from switch_bias_functions import toSI
 import cmath
 
 #   Vref
@@ -57,6 +57,6 @@ def main():
 
             if abs(LHS_deviation) <= tolerance and R1 >= R1_MIN and R2 >= R2_MIN:
                 index += 1
-                print("#{0}\tR2= {1:n}\tR1= {2:n}\tDeviation(%): {3:.4f}\tRHS: {4:.4f}".format(index, R2, R1, LHS_deviation, RHS))
+                print("#{0}\tR2= {1}\tR1= {2}\tDeviation(%): {3:.4f}\tRHS: {4:.4f}".format(index, toSI(R2), toSI(R1), LHS_deviation, RHS))
 
 main()

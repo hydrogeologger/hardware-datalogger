@@ -23,3 +23,6 @@
 # Altium Structure files, generated each time recompiled
 *.PrjPCBStructure
 *.PrjMbdStructure
+
+# Python cache folder
+**/__pycache__/*

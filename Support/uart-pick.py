@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+from switch_bias_functions import toSI
 import cmath
 
 def main():
@@ -20,12 +20,15 @@ def main():
                  330e3, 390e3, 470e3, 510e3, 560e3, 620e3, 680e3, 820e3, 1e6]
     
     LHS1 = 3.3
-
+    index = 0
     for R1 in resistors:
         for R2 in resistors:
             RHS1 = 5 * R1/(R1 + R2)
+            LHS_deviation = (RHS1 - LHS1) / LHS1
 
-            if (LHS1 >= RHS1) and abs((RHS1-LHS1)/LHS1) <= 0.04 and R1 >= 330 and R2 >= 330:
-                print("R1=", R1, "R2=", R2, "1: ", (RHS1-LHS1)/LHS1, "RHS1: ", RHS1)
+            if (LHS1 >= RHS1) and abs(LHS_deviation) <= 0.04 and R1 >= 330 and R2 >= 330:
+                index += 1
+                # print("R1=", R1, "R2=", R2, "1: ", (RHS1-LHS1)/LHS1, "RHS1: ", RHS1)
+                print("#{0}\tR1= {1}\tR2= {2}\tDeviation(%): {3:.4f}\tRHS: {4:.4f}".format(index, toSI(R2), toSI(R1), LHS_deviation, RHS1))
 
 main()

@@ -46,7 +46,7 @@ def main():
     R1_MIN = 680
     R2_MIN = 680
 
-    LHS = 680 / (680 + 2000)
+    LHS = 680 / (680 + 2200)
 
     print("LHS: ", LHS)
     for R2 in resistors:

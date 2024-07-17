@@ -1,3 +1,4 @@
+# https://github.com/Fermium/altium-on-git/blob/master/.gitignore
 
 ### Altium ###
 # Previews Files and Folders
@@ -24,5 +25,11 @@
 *.PrjPCBStructure
 *.PrjMbdStructure
 
+
+### Python ###
 # Python cache folder
 **/__pycache__/*
+
+
+### VSCode ###
+**/.vscode/*

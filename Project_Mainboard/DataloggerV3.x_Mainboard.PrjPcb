@@ -25,16 +25,24 @@ NameNetsHierarchically=0
 PowerPortNamesTakePriority=0
 AutoSheetNumbering=0
 AutoCrossReferences=0
+NewIndexingOfSheetSymbols=0
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
+IsVirtualBomDocumentRemoved=0
 OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
+CrossRefSheetStyle=1
+CrossRefLocationStyle=1
+CrossRefPorts=3
+CrossRefCrossSheets=1
+CrossRefSheetEntries=0
+CrossRefFollowFromMainSettings=1
 
 [Preferences]
 PrefsVaultGUID=
@@ -417,7 +425,7 @@ DocumentUniqueId=
 [ProjectVariant1]
 UniqueID=FBEFF42B-DF87-4749-8FD0-19DBE6566F42
 Description=RPI Default On
-AllowFabrication=0
+AllowFabrication=1
 ParameterCount=0
 VariationCount=18
 Variation1=Designator=R16U|UniqueId=\NSGTOKQW\EWYFIDEX\HIPSTNBG|Kind=1|AlternatePart= 
@@ -443,7 +451,7 @@ ParamVariationCount=0
 [ProjectVariant2]
 UniqueID=4C48D435-15B9-4D93-A036-1840710E983D
 Description=RPI Default Off
-AllowFabrication=0
+AllowFabrication=1
 ParameterCount=0
 VariationCount=18
 Variation1=Designator=R16D|UniqueId=\NSGTOKQW\EWYFIDEX\ULXSUWBG|Kind=1|AlternatePart= 
@@ -468,7 +476,7 @@ ParamVariationCount=0
 
 [Parameter1]
 Name=_Revision
-Value=3.2.1
+Value=3.2.1B
 
 [Configuration1]
 Name=Default Configuration
@@ -624,12 +632,22 @@ OutputName20=WireList Netlist
 OutputDocumentPath20=
 OutputVariantName20=
 OutputDefault20=0
+OutputType21=XSpiceNetlist
+OutputName21=Mixed Sim Netlist
+OutputDocumentPath21=
+OutputVariantName21=
+OutputDefault21=0
 
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
 TargetPrinter=\\print\lpAE429
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AdvSimNetlist
+OutputName1=Mixed Sim
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
 
 [OutputGroup3]
 Name=Documentation Outputs
@@ -1629,6 +1647,7 @@ Type122=2
 Type123=1
 Type124=1
 Type125=1
+Type126=1
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
@@ -1676,9 +1695,9 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=Data_logger_v3.SchLib
-ComponentDesignItemID0=BC848B
-ComponentSymbolReference0=BC848B
+ComponentLibraryIdentifier0=Datalogger.SchLib
+ComponentDesignItemID0=MEGA2560-PRO
+ComponentSymbolReference0=MEGA2560-PRO
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=0
@@ -1702,68 +1721,18 @@ ParameterName2=ComponentLink1Description
 ParameterUpdate2=1
 ParameterName3=ComponentLink1URL
 ParameterUpdate3=1
-ParameterName4=ComponentLink2Description
+ParameterName4=Description
 ParameterUpdate4=1
-ParameterName5=ComponentLink2URL
+ParameterName5=Library Reference
 ParameterUpdate5=1
-ParameterName6=ComponentLink3Description
-ParameterUpdate6=1
-ParameterName7=ComponentLink3URL
-ParameterUpdate7=1
-ParameterName8=Description
-ParameterUpdate8=1
-ParameterName9=fT (typ)
-ParameterUpdate9=1
-ParameterName10=Green
-ParameterUpdate10=1
-ParameterName11=IBM (max)
-ParameterUpdate11=1
-ParameterName12=IC (max)
-ParameterUpdate12=1
-ParameterName13=ICBO (max)
-ParameterUpdate13=1
-ParameterName14=ICM (max)
-ParameterUpdate14=1
-ParameterName15=Library Reference
-ParameterUpdate15=1
-ParameterName16=Manufacturer
-ParameterUpdate16=1
-ParameterName17=Mounting Technology
-ParameterUpdate17=1
-ParameterName18=PackageDescription
-ParameterUpdate18=1
-ParameterName19=PackageReference
-ParameterUpdate19=1
-ParameterName20=PackageVersion
-ParameterUpdate20=1
-ParameterName21=Packing
-ParameterUpdate21=1
-ParameterName22=PartNumber
-ParameterUpdate22=1
-ParameterName23=Polarity
-ParameterUpdate23=1
-ParameterName24=Ptot (max)
-ParameterUpdate24=1
-ParameterName25=VCBO (max)
-ParameterUpdate25=1
-ParameterName26=VCEO (max)
-ParameterUpdate26=1
-ParameterName27=VEBO (max)
-ParameterUpdate27=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=INF-SOT23_L
+ModelName0=MEGA2560PRO-EMBED
 ModelUpdate0=1
 ModelType1=PCBLIB
-ModelName1=INF-SOT23_M
+ModelName1=MEGA2560PRO-EMBED-IO
 ModelUpdate1=1
-ModelType2=PCBLIB
-ModelName2=INF-SOT23_N
-ModelUpdate2=1
-ModelType3=PCBLIB
-ModelName3=SOT-23_N
-ModelUpdate3=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0

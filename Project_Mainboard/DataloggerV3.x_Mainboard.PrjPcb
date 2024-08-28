@@ -427,7 +427,7 @@ UniqueID=FBEFF42B-DF87-4749-8FD0-19DBE6566F42
 Description=RPI Default On
 AllowFabrication=1
 ParameterCount=0
-VariationCount=18
+VariationCount=17
 Variation1=Designator=R16U|UniqueId=\NSGTOKQW\EWYFIDEX\HIPSTNBG|Kind=1|AlternatePart= 
 Variation2=Designator=C1|UniqueId=\NSGTOKQW\XMMYGDPP|Kind=1|AlternatePart= 
 Variation3=Designator=C2|UniqueId=\NSGTOKQW\DQIOXMUB|Kind=1|AlternatePart= 
@@ -443,9 +443,8 @@ Variation12=Designator=C23|UniqueId=\RKCTSPOB|Kind=1|AlternatePart=
 Variation13=Designator=C24|UniqueId=\SRDCXESE|Kind=1|AlternatePart= 
 Variation14=Designator=C26|UniqueId=\ICSBGUKV|Kind=1|AlternatePart= 
 Variation15=Designator=C27|UniqueId=\FPMBFTOU|Kind=1|AlternatePart= 
-Variation16=Designator=C28|UniqueId=\IQGMJCNJ|Kind=1|AlternatePart= 
-Variation17=Designator=C29|UniqueId=\GYCJGNOB|Kind=1|AlternatePart= 
-Variation18=Designator=R1|UniqueId=\NSGTOKQW\LRJNLGDI|Kind=1|AlternatePart= 
+Variation16=Designator=C29|UniqueId=\GYCJGNOB|Kind=1|AlternatePart= 
+Variation17=Designator=R1|UniqueId=\NSGTOKQW\LRJNLGDI|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [ProjectVariant2]
@@ -453,7 +452,7 @@ UniqueID=4C48D435-15B9-4D93-A036-1840710E983D
 Description=RPI Default Off
 AllowFabrication=1
 ParameterCount=0
-VariationCount=18
+VariationCount=17
 Variation1=Designator=R16D|UniqueId=\NSGTOKQW\EWYFIDEX\ULXSUWBG|Kind=1|AlternatePart= 
 Variation2=Designator=C1|UniqueId=\NSGTOKQW\XMMYGDPP|Kind=1|AlternatePart= 
 Variation3=Designator=C2|UniqueId=\NSGTOKQW\DQIOXMUB|Kind=1|AlternatePart= 
@@ -469,9 +468,8 @@ Variation12=Designator=C23|UniqueId=\RKCTSPOB|Kind=1|AlternatePart=
 Variation13=Designator=C24|UniqueId=\SRDCXESE|Kind=1|AlternatePart= 
 Variation14=Designator=C26|UniqueId=\ICSBGUKV|Kind=1|AlternatePart= 
 Variation15=Designator=C27|UniqueId=\FPMBFTOU|Kind=1|AlternatePart= 
-Variation16=Designator=C28|UniqueId=\IQGMJCNJ|Kind=1|AlternatePart= 
-Variation17=Designator=C29|UniqueId=\GYCJGNOB|Kind=1|AlternatePart= 
-Variation18=Designator=R1|UniqueId=\NSGTOKQW\LRJNLGDI|Kind=1|AlternatePart= 
+Variation16=Designator=C29|UniqueId=\GYCJGNOB|Kind=1|AlternatePart= 
+Variation17=Designator=R1|UniqueId=\NSGTOKQW\LRJNLGDI|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [Parameter1]

@@ -1,4 +1,4 @@
-﻿[Design]
+[Design]
 Version=1.0
 HierarchyMode=0
 ChannelRoomNamingStyle=0
@@ -187,7 +187,7 @@ DocumentUniqueId=
 
 [Parameter1]
 Name=_Revision
-Value=3.2.1B
+Value=3.2.1
 
 [Configuration1]
 Name=Sources
